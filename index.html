@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سياسة الخصوصية – تطبيق صواب</title>
+    <!-- Google Font: Tajawal -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <style>
+        /* ─── RESET & BASE ────────────────────────────── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: #F5F8FF; /* خلفية ناعمة */
+            color: #1E293B;
+            direction: rtl;
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #FFFFFF;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid #F1F5F9;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ─── الهوية البصرية: الشريط الأصفر العلوي ────────── */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: #FACC16; /* الأصفر الثانوي */
+        }
+
+        /* ─── HEADER ───────────────────────────────────── */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #E5E7EB;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-left .tag {
+            font-size: 14px;
+            color: #64748B;
+            font-weight: 500;
+        }
+
+        .header-left h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1D4ED8; /* الأزرق الأساسي */
+            margin-top: 4px;
+        }
+
+        .header-left .date {
+            font-size: 13px;
+            color: #94A3B8;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        /* ─── مكان الشعار (لون أبيض) ───────────────────── */
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: #1D4ED8; /* خلفية زرقاء لإبراز الشعار الأبيض */
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(29, 78, 216, 0.2);
+            padding: 12px;
+        }
+
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo-placeholder .logo-fallback {
+            color: #FFFFFF;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        /* ─── CONTENT ──────────────────────────────────── */
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* كل قسم */
+        .section {
+            background: #F8FAFC;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid #F1F5F9;
+            transition: all 0.2s ease;
+        }
+
+        .section:hover {
+            border-color: #DBEAFE;
+            box-shadow: 0 4px 12px rgba(29, 78, 216, 0.04);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .section-header .number {
+            width: 32px;
+            height: 32px;
+            background: #DBEAFE;
+            color: #1D4ED8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .section-header h2 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .section p {
+            color: #475569;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .section ul {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0 0 0;
+        }
+
+        .section ul li {
+            padding: 6px 0;
+            color: #475569;
+            font-size: 14px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .section ul li::before {
+            content: '—';
+            color: #1D4ED8;
+            font-weight: 700;
+        }
+
+        .section .highlight {
+            background: #FFF7E6; /* أصفر فاتح جداً */
+            padding: 12px 16px;
+            border-radius: 12px;
+            border-right: 4px solid #FACC16;
+            margin-top: 12px;
+            font-size: 14px;
+            color: #1E293B;
+        }
+
+        .section .email {
+            display: inline-block;
+            background: #1D4ED8;
+            color: #FFFFFF;
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        /* ─── FOOTER ───────────────────────────────────── */
+        .footer {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #E5E7EB;
+            text-align: center;
+            color: #64748B;
+            font-size: 13px;
+        }
+
+        .footer strong {
+            color: #1D4ED8;
+        }
+
+        /* ─── RESPONSIVE ────────────────────────────────── */
+        @media (max-width: 640px) {
+            body {
+                padding: 20px 12px;
+            }
+            .container {
+                padding: 24px 16px;
+            }
+            .header {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+            }
+            .logo-placeholder {
+                width: 64px;
+                height: 64px;
+                align-self: flex-start;
+            }
+            .header-left h1 {
+                font-size: 22px;
+            }
+            .section {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-left">
+                <span class="tag">تطبيق صواب</span>
+                <h1>سياسة الخصوصية</h1>
+                <span class="date">آخر تحديث: 20 يونيو 2026</span>
+            </div>
+            <div class="logo-placeholder">
+                <!-- ضع مسار الشعار الخاص بك هنا -->
+                <img src="logo.png" alt="شعار صواب" />
+                <!-- في حال عدم وجود ملف صورة، سيظهر النص كاحتياطي -->
+                <!-- <span class="logo-fallback">صواب</span> -->
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+
+            <!-- INTRODUCTION -->
+            <div class="section">
+                <p style="font-size:16px; margin-bottom:0;">
+                    نحن في تطبيق <strong>صواب</strong> نحترم خصوصية المستخدمين ونلتزم بحماية بياناتهم الشخصية. توضح هذه السياسة كيفية جمع البيانات واستخدامها وتخزينها وحمايتها عند استخدام التطبيق.
+                </p>
+            </div>
+
+            <!-- 1. البيانات التي نقوم بجمعها -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="number">1</span>
+                    <h2>البيانات التي نقوم بجمعها</h2>
+                </div>
+                <p>عند إنشاء حساب أو استخدام التطبيق، قد نقوم بجمع البيانات التالية:</p>
+                <ul>
+                    <li>الاسم.</li>
+                    <li>رقم الهاتف.</li>
+                    <li>المحافظة.</li>
+                    <li>كلمة المرور (بشكل مشفر وآمن).</li>
+                    <li>نتائج الامتحانات والدرجات والإحصائيات التعليمية.</li>
+                    <li>بيانات التقدم الدراسي وسلسلة الإنجاز (Streak).</li>
+                    <li>الصور التي يرفعها المستخدم للإجابة على الأسئلة الامتحانية.</li>
+                    <li>بيانات تقنية محدودة تتعلق بأداء التطبيق وتحسين الخدمة.</li>
+                </ul>
+            </div>
+
+            <!-- 2. كيفية استخدام البيانات -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="number">2</span>
+                    <h2>كيفية استخدام البيانات</h2>
+                </div>
+                <p>نستخدم البيانات للأغراض التالية:</p>
+                <ul>
+                    <li>إنشاء وإدارة حساب المستخدم.</li>
+                    <li>تقديم خدمات الامتحانات والتصحيح.</li>
+                    <li>حفظ النتائج والإحصائيات التعليمية.</li>
+                    <li>عرض تقدم المستخدم داخل التطبيق.</li>
+                    <li>تحسين جودة الخدمات وتجربة الاستخدام.</li>
+                    <li>تقديم الدعم الفني عند الحاجة.</li>
+                    <li>حماية المنصة من الاستخدام المخالف أو الاحتيالي.</li>
+                </ul>
+            </div>
+
+            <!-- 3. الصور المرفوعة من المستخدم -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="number">3</span>
+                    <h2>الصور المرفوعة من المستخدم</h2>
+                </div>
+                <p>عند رفع صور للإجابة على الأسئلة:</p>
+                <ul>
+                    <li>يتم استخدام الصور لغرض تصحيح الإجابات وتقديم النتائج.</li>
+                    <li>قد يتم تخزين الصور على خوادم آمنة تابعة لخدمات التخزين السحابي المستخدمة من قبل التطبيق.</li>
+                    <li>لا يتم بيع الصور أو مشاركتها لأغراض تسويقية.</li>
+                </ul>
+            </div>
+
+            <!-- 4. مشاركة البيانات -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="number">4</span>
+                    <h2>مشاركة البيانات</h2>
+                </div>
+                <p>لا نقوم ببيع أو تأجير البيانات الشخصية لأي جهة خارجية.</p>
+                <p class="highlight">
+                    قد تتم معالجة بعض البيانات من خلال مزودي خدمات خارجيين ضروريين لتشغيل التطبيق، مثل:
+                    خدمات قواعد البيانات، التخزين السحابي، الاستضافة، والذكاء الاصطناعي المستخدم في معالجة الإجابات.
+                    يتم استخدام هذه الخدمات فقط لتقديم وظائف التطبيق الأساسية.
+                </p>
+            </div>
+
+            <!-- 5. حماية البيانات -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="number">5</span>
+                    <h2>حماية البيانات</h2>
+                </div>
+                <p>نطبق إجراءات أمنية مناسبة لحماية البيانات من الوصول غير المصرح به أو التعديل أو الإفصاح أو الإتلاف.</p>
+                <p>ورغم ذلك، لا يمكن ضمان أمان أي نظام إلكتروني بنسبة 100%.</p>
+            </div>
+
+            <!-- 6. الفئة العمرية -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="number">6</span>
+                    <h2>الفئة العمرية</h2>
+                </div>
+                <p>تم تصميم تطبيق صواب بشكل أساسي لطلاب السادس الإعدادي.</p>
+                <p>إذا تبين لنا أن بيانات مستخدم تم جمعها بطريقة تخالف القوانين المعمول بها، فقد نقوم بحذف تلك البيانات أو تقييد الحساب.</p>
+            </div>
+
+            <!-- 7. الاحتفاظ بالبيانات -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="number">7</span>
+                    <h2>الاحتفاظ بالبيانات</h2>
+                </div>
+                <p>نحتفظ بالبيانات طالما كان الحساب فعالاً أو طالما كان ذلك ضرورياً لتقديم خدمات التطبيق.</p>
+            </div>
+
+            <!-- 8. حذف الحساب والبيانات -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="number">8</span>
+                    <h2>حذف الحساب والبيانات</h2>
+                </div>
+                <p>حالياً لا يوفر التطبيق حذف الحساب بشكل مباشر من داخل التطبيق.</p>
+                <p class="highlight">
+                    يمكن للمستخدم طلب حذف حسابه وبياناته عبر التواصل مع إدارة التطبيق من خلال وسائل التواصل الرسمية.
+                    بعد التحقق من الطلب، سيتم اتخاذ الإجراءات المناسبة لحذف البيانات المرتبطة بالحساب وفق الإمكانات التقنية والمتطلبات القانونية.
+                </p>
+            </div>
+
+            <!-- 9. التعديلات على سياسة الخصوصية -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="number">9</span>
+                    <h2>التعديلات على سياسة الخصوصية</h2>
+                </div>
+                <p>قد نقوم بتحديث هذه السياسة من وقت لآخر.</p>
+                <p>سيتم نشر أي تحديثات داخل التطبيق أو عبر القنوات الرسمية الخاصة بنا.</p>
+            </div>
+
+            <!-- 10. التواصل معنا -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="number">10</span>
+                    <h2>التواصل معنا</h2>
+                </div>
+                <p>لأي استفسار يتعلق بالخصوصية أو البيانات الشخصية يمكن التواصل عبر:</p>
+                <a href="mailto:sawabedu@gmail.com" class="email">sawabedu@gmail.com</a>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            جميع الحقوق محفوظة &copy; 2026 <strong>تطبيق صواب</strong>
+        </div>
+
+    </div>
+
+</body>
+</html>
